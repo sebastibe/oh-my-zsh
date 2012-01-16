@@ -17,6 +17,13 @@ parse_git_dirty () {
 
   if [[ $(echo ${gitstat} | grep -v '^$' | wc -l | tr -d ' ') == 0 ]]; then
 	echo -n "$ZSH_THEME_GIT_PROMPT_CLEAN"
+=======
+# Checks if working tree is dirty
+parse_git_dirty() {
+  if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
+    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+  else
+    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
 
