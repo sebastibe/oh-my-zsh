@@ -9,7 +9,7 @@ h2. Setup
 h3. The automatic installer... (do you trust me?)
 
 @wget http://github.com/sjl/oh-my-zsh/raw/master/tools/install.sh -O - | sh@
-=======
+
 You can install this via the command line with either `curl` or `wget`.
 
 h4. via `curl`
