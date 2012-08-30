@@ -51,11 +51,8 @@ for plugin ($plugins); do
 done
 
 # Load all of your custom configurations from custom/
-if [ -d "$ZSH/custom" ]; then
-  for config_file ($ZSH/custom/*.zsh) source $config_file
-fi
+for config_file ($ZSH_CUSTOM/*.zsh(N)) source $config_file
 
-for config_file ($ZSH_CUSTOM/*.zsh) source $config_file
 
 # Load the theme
 if [ "$ZSH_THEME" = "random" ]
@@ -69,12 +66,11 @@ then
 else
   if [ ! "$ZSH_THEME" = ""  ]
   then
-    if [ -f "$ZSH/custom/$ZSH_THEME.zsh-theme" ]
+    if [ -f "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme" ]
     then
-      source "$ZSH/custom/$ZSH_THEME.zsh-theme"
+      source "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme"
     else
       source "$ZSH/themes/$ZSH_THEME.zsh-theme"
     fi
   fi
 fi
-

@@ -30,7 +30,7 @@ cd () {
 
 alias md='mkdir -p'
 alias rd=rmdir
-alias d='dirs -v'
+alias d='dirs -v | head -10'
 
 # List direcory contents
 alias l1='tree --dirsfirst -ChFL 1'
