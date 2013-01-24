@@ -20,9 +20,9 @@ cd () {
   elif [[ "x$*" == "x...." ]]; then
     cd ../../..
   elif [[ "x$*" == "x....." ]]; then
-    cd ../../..
-  elif [[ "x$*" == "x......" ]]; then
     cd ../../../..
+  elif [[ "x$*" == "x......" ]]; then
+    cd ../../../../..
   else
     builtin cd "$@"
   fi
@@ -48,3 +48,4 @@ alias ll='ll1'
 function mcd() { 
   mkdir -p "$1" && cd "$1"; 
 }
+
